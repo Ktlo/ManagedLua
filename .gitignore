@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+*.db
+/include
+/src/ReadMe.txt
+/src/.vs/ManagedLua/v15/.suo
+/src/Debug/ManagedLua.tlog
+/src/Debug
+/src/Debug/.NETFramework,Version=v4.5.2.AssemblyAttributes.asm

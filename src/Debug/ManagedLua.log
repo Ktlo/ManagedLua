@@ -1,0 +1,20 @@
+﻿  AssemblyInfo.cpp
+UserFunction.obj : warning LNK4248: unresolved typeref token (0100000A) for 'lua_State'; image may not run
+UserData.obj : warning LNK4248: unresolved typeref token (0100001A) for 'lua_State'; image may not run
+TableEnumerator.obj : warning LNK4248: unresolved typeref token (01000012) for 'lua_State'; image may not run
+Table.obj : warning LNK4248: unresolved typeref token (01000017) for 'lua_State'; image may not run
+synchlua.obj : warning LNK4248: unresolved typeref token (0100000F) for 'lua_State'; image may not run
+Number.obj : warning LNK4248: unresolved typeref token (0100000E) for 'lua_State'; image may not run
+Nil.obj : warning LNK4248: unresolved typeref token (0100000E) for 'lua_State'; image may not run
+LuaYieldEventArgs.obj : warning LNK4248: unresolved typeref token (01000014) for 'lua_State'; image may not run
+LuaString.obj : warning LNK4248: unresolved typeref token (0100000F) for 'lua_State'; image may not run
+luareader.obj : warning LNK4248: unresolved typeref token (0100000B) for 'lua_State'; image may not run
+LuaObject.obj : warning LNK4248: unresolved typeref token (0100000E) for 'lua_State'; image may not run
+LuaGC.obj : warning LNK4248: unresolved typeref token (0100000B) for 'lua_State'; image may not run
+luaCLR.obj : warning LNK4248: unresolved typeref token (01000022) for 'lua_State'; image may not run
+LuaBoolean.obj : warning LNK4248: unresolved typeref token (0100000E) for 'lua_State'; image may not run
+Lua.obj : warning LNK4248: unresolved typeref token (0100000D) for 'lua_State'; image may not run
+LightUserData.obj : warning LNK4248: unresolved typeref token (0100000E) for 'lua_State'; image may not run
+functionlua.obj : warning LNK4248: unresolved typeref token (01000012) for 'lua_State'; image may not run
+Function.obj : warning LNK4248: unresolved typeref token (01000013) for 'lua_State'; image may not run
+  ManagedLua.vcxproj -> C:\Users\Ktlo\Source\Repos\ManagedLua\src\Debug\ManagedLua.dll

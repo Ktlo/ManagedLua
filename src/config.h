@@ -28,6 +28,13 @@
 #define INLINE inline
 
 //COM Invisible
-#define HIDE [ComVisible(false)]
+#define HIDE 
+
+#if _DEBUG
+#define DEBUG _DEBUG
+#endif
+
+//Extra methods for 32-bit support in 64-bit program assembly
+#define EXTRA 1
 
 #endif // __LIB_CONFIG

@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Headers\Lua Types">
+      <UniqueIdentifier>{03257057-f83e-49a4-956c-2b01d4d7f26c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Native">
+      <UniqueIdentifier>{04328a99-9b14-4a0e-8c15-cef1b2660496}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Exceptions">
+      <UniqueIdentifier>{1860d334-a4fb-4934-bdfc-b506be84e6a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\Lua Types">
+      <UniqueIdentifier>{476ac6ef-3831-417f-b539-5b07f3571e9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Native">
+      <UniqueIdentifier>{bb04aede-9a40-4069-897a-c3f117815533}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Exceptions">
+      <UniqueIdentifier>{bb9ab45c-74e4-4dcd-86c7-5d4daceaf6bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headers\Tools">
+      <UniqueIdentifier>{3b683adb-e53f-4486-a7a9-0b04536ebbbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tools">
+      <UniqueIdentifier>{3efc8b6c-964f-44ca-9e24-1beb251c60b5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ManagedLua.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaObject.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="DataType.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Lua.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="alloclua.h">
+      <Filter>Headers\Native</Filter>
+    </ClInclude>
+    <ClInclude Include="luareader.h">
+      <Filter>Headers\Native</Filter>
+    </ClInclude>
+    <ClInclude Include="Nil.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaBoolean.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="LightUserData.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Number.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaString.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="IMetatable.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaException.h">
+      <Filter>Headers\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="NotSupportedLuaTypeException.h">
+      <Filter>Headers\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="DifferentLuaStatesException.h">
+      <Filter>Headers\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="synchlua.h">
+      <Filter>Headers\Native</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaGC.h">
+      <Filter>Headers\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="functionlua.h">
+      <Filter>Headers\Native</Filter>
+    </ClInclude>
+    <ClInclude Include="UserFunction.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="UserData.h">
+      <Filter>Headers\Lua Types</Filter>
+    </ClInclude>
+    <ClInclude Include="UserDataException.h">
+      <Filter>Headers\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="luaCLR.h">
+      <Filter>Headers\Native</Filter>
+    </ClInclude>
+    <ClInclude Include="MemManager.h">
+      <Filter>Headers\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="MemObject.h">
+      <Filter>Headers\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="MemEnumerator.h">
+      <Filter>Headers\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="EventLuaData.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaYieldEventArgs.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TableEnumerator.h">
+      <Filter>Headers\Tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ManagedLua.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Lua.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaObject.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="alloclua.cpp">
+      <Filter>Source\Native</Filter>
+    </ClCompile>
+    <ClCompile Include="luareader.cpp">
+      <Filter>Source\Native</Filter>
+    </ClCompile>
+    <ClCompile Include="Nil.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaBoolean.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="LightUserData.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Number.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaString.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaException.cpp">
+      <Filter>Source\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="NotSupportedLuaTypeException.cpp">
+      <Filter>Source\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="DifferentLuaStatesException.cpp">
+      <Filter>Source\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="synchlua.cpp">
+      <Filter>Source\Native</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaGC.cpp">
+      <Filter>Source\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="functionlua.cpp">
+      <Filter>Source\Native</Filter>
+    </ClCompile>
+    <ClCompile Include="UserFunction.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="UserData.cpp">
+      <Filter>Source\Lua Types</Filter>
+    </ClCompile>
+    <ClCompile Include="UserDataException.cpp">
+      <Filter>Source\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="luaCLR.cpp">
+      <Filter>Source\Native</Filter>
+    </ClCompile>
+    <ClCompile Include="MemManager.cpp">
+      <Filter>Source\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="MemObject.cpp">
+      <Filter>Source\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="MemEnumerator.cpp">
+      <Filter>Source\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="EventLuaData.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaYieldEventArgs.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TableEnumerator.cpp">
+      <Filter>Source\Tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico">
+      <Filter>Resource</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

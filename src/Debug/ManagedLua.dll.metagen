@@ -1,0 +1,378 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly ManagedLua, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class ManagedLua.LuaObject: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Properties:
+    Int32 Position 'get ' : 
+    System.String Typename 'get ' : 
+    ManagedLua.DataType LuaType 'get ' : 
+  Methods:
+    get_LuaType(): PrivateScope, Public, HideBySig, SpecialName
+    GetTypeName(DataType): PrivateScope, Public, Static, HideBySig
+    get_Typename(): PrivateScope, Public, HideBySig, SpecialName
+    get_Position(): PrivateScope, Public, HideBySig, SpecialName
+    ToBoolean(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    op_Implicit(LuaObject): PrivateScope, Public, Static, HideBySig, SpecialName
+Class ManagedLua.Function: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+    Void .ctor(ManagedLua.Lua, ManagedLua.UserTypes.UserFunction): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Events:
+    System.EventHandler WhenYield: SpecialName
+  Methods:
+    Call(LuaObject[]): PrivateScope, Public, HideBySig
+    YieldableCall(LuaObject[]): PrivateScope, Public, HideBySig
+    OnEvent(Object, EventArgs): PrivateScope, Public, HideBySig
+    add_WhenYield(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_WhenYield(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+Class ManagedLua.Lua: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+    Void .ctor(ManagedLua.Tools.MemManager): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.ValueType GC 'get ' LuaGC IsBoxed : 
+  Methods:
+    GetMainThread(): PrivateScope, Public, HideBySig
+    GetParentThread(): PrivateScope, Public, HideBySig
+    NewThread(): PrivateScope, Public, HideBySig
+    IsMainThread(): PrivateScope, Public, HideBySig
+    get_GC(): PrivateScope, Public, HideBySig, SpecialName
+    OpenLibs(): PrivateScope, Public, HideBySig
+    OpenManegedLib(): PrivateScope, Public, HideBySig
+    GetGlobal(): PrivateScope, Public, HideBySig
+    GetRegistry(): PrivateScope, Public, HideBySig
+    NewTable(): PrivateScope, Public, HideBySig
+    NewTable(UInt32, UInt32): PrivateScope, Public, HideBySig
+    StackState(): PrivateScope, Public, HideBySig
+    GetTypeMetatable(DataType): PrivateScope, Public, HideBySig
+    SetTypeMetatable(DataType, Table): PrivateScope, Public, HideBySig
+    Load(Stream): PrivateScope, Public, HideBySig
+    Load(Stream, LoadMode): PrivateScope, Public, HideBySig
+    Load(Stream, String): PrivateScope, Public, HideBySig
+    Load(Stream, String, LoadMode): PrivateScope, Public, HideBySig
+    LoadString(String): PrivateScope, Public, HideBySig
+    LoadString(String, LoadMode): PrivateScope, Public, HideBySig
+    LoadString(String, String): PrivateScope, Public, HideBySig
+    LoadString(String, String, LoadMode): PrivateScope, Public, HideBySig
+    CompareStates(Lua, Lua): PrivateScope, Public, Static, HideBySig
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+Struct ManagedLua.Lua+LoadMode: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    SByte value__ IsSignUnspecifiedByte : Public, SpecialName, RTSpecialName
+    LoadMode both = 0 : Public, Static, Literal, HasDefault
+    LoadMode text = 1 : Public, Static, Literal, HasDefault
+    LoadMode bytecode = 2 : Public, Static, Literal, HasDefault
+Class ManagedLua.Exceptions.LuaException: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Exception
+    Void .ctor(ManagedLua.LuaObject): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(ErrorCodes, System.String, ManagedLua.LuaObject): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(ErrorCodes, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(ErrorCodes, ManagedLua.LuaObject): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(ErrorCodes): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    ErrorCodes ErrorCode 'get ' : 
+    ManagedLua.LuaObject ErrorObject 'get ' : 
+  Methods:
+    get_ErrorObject(): PrivateScope, Public, HideBySig, SpecialName
+    get_ErrorCode(): PrivateScope, Public, HideBySig, SpecialName
+Struct ManagedLua.Exceptions.LuaException+ErrorCodes: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    SByte value__ IsSignUnspecifiedByte : Public, SpecialName, RTSpecialName
+    ErrorCodes unknown = -1 : Public, Static, Literal, HasDefault
+    ErrorCodes ok = 0 : Public, Static, Literal, HasDefault
+    ErrorCodes thread_yield = 1 : Public, Static, Literal, HasDefault
+    ErrorCodes runtime = 2 : Public, Static, Literal, HasDefault
+    ErrorCodes syntax = 3 : Public, Static, Literal, HasDefault
+    ErrorCodes memory = 4 : Public, Static, Literal, HasDefault
+    ErrorCodes garbage_collection = 5 : Public, Static, Literal, HasDefault
+    ErrorCodes message = 6 : Public, Static, Literal, HasDefault
+    ErrorCodes file = 7 : Public, Static, Literal, HasDefault
+Class ManagedLua.UserTypes.UserFunction: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Call(LuaObject[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class ManagedLua.UserTypes.UserFunction+LuaArgException: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.Exception
+    Void .ctor(ManagedLua.LuaObject, System.String, System.Object[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(ManagedLua.LuaObject, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    ManagedLua.LuaObject Argument 'get ' : 
+  Methods:
+    get_Argument(): PrivateScope, Public, HideBySig, SpecialName
+Class ManagedLua.UserTypes.LuaYieldEventArgs: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 Length 'get ' : 
+    ManagedLua.LuaObject Item [Int32] 'get ' : 
+  Methods:
+    get_Item(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Length(): PrivateScope, Public, HideBySig, SpecialName
+    PushResult(LuaObject): PrivateScope, Public, HideBySig
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Struct ManagedLua.DataType: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int16 value__ : Public, SpecialName, RTSpecialName
+    ManagedLua.DataType none = -1 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType nil = 0 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType boolean = 1 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType lightuserdata = 2 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType number = 3 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType luastring = 4 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType table = 5 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType function = 6 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType userdata = 7 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType thread = 8 : Public, Static, Literal, HasDefault
+    ManagedLua.DataType all = 255 : Public, Static, Literal, HasDefault
+Class ManagedLua.LightUserData: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+    Void .ctor(UInt32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Void*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    op_Implicit(LightUserData): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Implicit(LightUserData): PrivateScope, Public, Static, HideBySig, SpecialName
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+Class ManagedLua.Nil: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+Class ManagedLua.LuaBoolean: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+    Void .ctor(Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+Class ManagedLua.Number: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+    Void .ctor(Int64): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    IsInt(): PrivateScope, Public, HideBySig
+    IsFloat(): PrivateScope, Public, HideBySig
+    ToInt64(): PrivateScope, Public, HideBySig
+    ToDouble(): PrivateScope, Public, HideBySig
+    op_Implicit(Number): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Implicit(Number): PrivateScope, Public, Static, HideBySig, SpecialName
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+Class ManagedLua.LuaString: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(SByte*, UInt32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(SByte*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    SByte* CString 'get ' : 
+    UInt32 Length 'get ' : 
+  Methods:
+    get_Length(): PrivateScope, Public, HideBySig, SpecialName
+    get_CString(): PrivateScope, Public, HideBySig, SpecialName
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+Interface ManagedLua.IMetatable: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Properties:
+    ManagedLua.Table Metatable 'get set' : 
+    Boolean RawAccess 'get set' : 
+  Methods:
+    get_RawAccess(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RawAccess(Boolean(HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Metatable(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Metatable(Table): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Class ManagedLua.Table: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+  Interfaces:
+    ManagedLua.IMetatable
+    System.Collections.Generic.IDictionary`2[ManagedLua.LuaObject,ManagedLua.LuaObject]
+    System.Collections.Generic.ICollection`1[System.Collections.Generic.KeyValuePair`2[ManagedLua.LuaObject,ManagedLua.LuaObject]]
+    System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[ManagedLua.LuaObject,ManagedLua.LuaObject]]
+    System.Collections.IEnumerable
+    System.IComparable`1[ManagedLua.LuaObject]
+    System.IEquatable`1[ManagedLua.LuaObject]
+  Properties:
+    System.Collections.Generic.ICollection`1[ManagedLua.LuaObject] Values 'get ' : 
+    System.Collections.Generic.ICollection`1[ManagedLua.LuaObject] Keys 'get ' : 
+    Boolean IsReadOnly 'get ' : 
+    Int32 Count 'get ' : 
+    ManagedLua.Table Metatable 'get set' : 
+    Boolean RawAccess 'get set' : 
+    ManagedLua.LuaObject Item [System.String] 'get set' : 
+    ManagedLua.LuaObject Item [Int32] 'get set' : 
+    ManagedLua.LuaObject Item [ManagedLua.LuaObject] 'get set' : 
+    Int32 Length 'get ' : 
+  Methods:
+    get_Length(): PrivateScope, Public, HideBySig, SpecialName
+    get_Item(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Item(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Item(LuaObject): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Item(String, LuaObject): PrivateScope, Public, HideBySig, SpecialName
+    set_Item(Int32, LuaObject): PrivateScope, Public, HideBySig, SpecialName
+    set_Item(LuaObject, LuaObject): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    GetEnumerator(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_RawAccess(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_RawAccess(Boolean(HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Metatable(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Metatable(Table): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+    Equals(Object): PrivateScope, Public, Final, Virtual, HideBySig
+    Equals(LuaObject): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    CompareTo(LuaObject): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    op_Equality(LuaObject): PrivateScope, Public, HideBySig, SpecialName
+    op_Inequality(LuaObject): PrivateScope, Public, HideBySig, SpecialName
+    op_LessThan(LuaObject): PrivateScope, Public, HideBySig, SpecialName
+    op_GreaterThan(LuaObject): PrivateScope, Public, HideBySig, SpecialName
+    op_LessThanOrEqual(LuaObject): PrivateScope, Public, HideBySig, SpecialName
+    op_GreaterThanOrEqual(LuaObject): PrivateScope, Public, HideBySig, SpecialName
+    GetObjectEnumerator(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IsReadOnly(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Add(LuaObject, LuaObject): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    Add(KeyValuePair`2): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    Clear(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    Contains(KeyValuePair`2): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    CopyTo(KeyValuePair`2[], Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    Remove(LuaObject): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    Remove(KeyValuePair`2): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_Keys(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Values(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    ContainsKey(LuaObject): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    TryGetValue(LuaObject, LuaObject&): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ManagedLua.UserData: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :ManagedLua.LuaObject
+  Interfaces:
+    ManagedLua.IMetatable
+    System.IEquatable`1[ManagedLua.LuaObject]
+    System.IComparable`1[ManagedLua.LuaObject]
+  Properties:
+    ManagedLua.Table Metatable 'get set' : 
+    Boolean RawAccess 'get set' : 
+    UserDataType UDType 'get ' : 
+  Methods:
+    FromObject(Object): PrivateScope, Public, Static, HideBySig
+    FromClass(Type): PrivateScope, Public, Static, HideBySig
+    FromClass(): PrivateScope, Public, Static, HideBySig
+    FromNamespace(String): PrivateScope, Public, Static, HideBySig
+    get_UDType(): PrivateScope, Public, HideBySig, SpecialName
+    GetObject(): PrivateScope, Public, HideBySig
+    GetClassType(): PrivateScope, Public, HideBySig
+    GetNamespace(): PrivateScope, Public, HideBySig
+    ToBoolean(): PrivateScope, Public, Final, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Final, Virtual, HideBySig
+    get_RawAccess(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_RawAccess(Boolean(HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Metatable(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Metatable(Table): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Equals(Object): PrivateScope, Public, Final, Virtual, HideBySig
+    Equals(LuaObject): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    CompareTo(LuaObject): PrivateScope, Public, Final, Virtual, HideBySig
+Struct ManagedLua.UserData+UserDataType: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Byte value__ : Public, SpecialName, RTSpecialName
+    UserDataType third_party = 0 : Public, Static, Literal, HasDefault
+    UserDataType object_type = 1 : Public, Static, Literal, HasDefault
+    UserDataType class_type = 2 : Public, Static, Literal, HasDefault
+    UserDataType ns_type = 3 : Public, Static, Literal, HasDefault
+Class ManagedLua.Exceptions.NotSupportedLuaTypeException: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Exception
+    Void .ctor(ManagedLua.DataType, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(ManagedLua.DataType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Struct ManagedLua.Tools.LuaGC: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Interfaces:
+    System.IEquatable`1[ManagedLua.Tools.LuaGC]
+  Properties:
+    Int32 StepMultiplier 'get set' : 
+    Int32 Pause 'get set' : 
+    Boolean Running 'get ' : 
+  Methods:
+    Stop(): PrivateScope, Public, HideBySig
+    Restart(): PrivateScope, Public, HideBySig
+    get_Running(): PrivateScope, Public, HideBySig, SpecialName
+    CountKB(): PrivateScope, Public, HideBySig
+    Count(): PrivateScope, Public, HideBySig
+    Step(): PrivateScope, Public, HideBySig
+    Collect(): PrivateScope, Public, HideBySig
+    get_Pause(): PrivateScope, Public, HideBySig, SpecialName
+    set_Pause(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_StepMultiplier(): PrivateScope, Public, HideBySig, SpecialName
+    set_StepMultiplier(Int32): PrivateScope, Public, HideBySig, SpecialName
+    Equals(Object): PrivateScope, Public, Final, Virtual, HideBySig
+    Equals(LuaGC): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ManagedLua.Tools.MemManager: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(UInt32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Collections.Generic.IEnumerable`1[ManagedLua.Tools.MemObject]
+    System.Collections.IEnumerable
+  Properties:
+    UInt32 Size 'get ' : 
+    UInt32 HeaderSize 'get ' : 
+  Methods:
+    get_HeaderSize(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Size(): PrivateScope, Public, HideBySig, SpecialName
+    Count(): PrivateScope, Public, HideBySig
+    Count(DataType): PrivateScope, Public, HideBySig
+    Count(Byte): PrivateScope, Public, HideBySig
+    MeasureAll(): PrivateScope, Public, HideBySig
+    MeasureAll(DataType): PrivateScope, Public, HideBySig
+    MeasureAll(Byte): PrivateScope, Public, HideBySig
+    EnumerateByType(Byte): PrivateScope, Public, HideBySig
+    EnumerateByType(DataType): PrivateScope, Public, HideBySig
+    GetEnumerator(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    GetEnumerator2(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ManagedLua.Tools.MemEnumerator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.Collections.Generic.IEnumerator`1[ManagedLua.Tools.MemObject]
+    System.IDisposable
+    System.Collections.IEnumerator
+  Properties:
+    System.Object Current2 'get ' : 
+    ManagedLua.Tools.MemObject Current 'get ' : 
+  Methods:
+    get_Current(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Current2(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    MoveNext(): PrivateScope, Public, Virtual, HideBySig
+    Reset(): PrivateScope, Public, Virtual, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class ManagedLua.Tools.MemObject: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Properties:
+    UInt32 Size 'get ' : 
+    Byte ObjectType 'get ' : 
+    ManagedLua.DataType LuaType 'get ' : 
+  Methods:
+    get_LuaType(): PrivateScope, Public, HideBySig, SpecialName
+    get_ObjectType(): PrivateScope, Public, HideBySig, SpecialName
+    get_Size(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class ManagedLua.Tools.TableEnumerator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.Collections.Generic.IEnumerator`1[System.Collections.Generic.KeyValuePair`2[ManagedLua.LuaObject,ManagedLua.LuaObject]]
+    System.IDisposable
+    System.Collections.IEnumerator
+  Properties:
+    System.Object ObjectCurrent 'get ' : 
+    System.Collections.Generic.KeyValuePair`2[ManagedLua.LuaObject,ManagedLua.LuaObject] Current 'get ' : 
+  Methods:
+    get_Current(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_ObjectCurrent(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    MoveNext(): PrivateScope, Public, Virtual, HideBySig
+    Reset(): PrivateScope, Public, Virtual, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
